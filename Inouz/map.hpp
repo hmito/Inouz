@@ -4,7 +4,6 @@
 #include<vector>
 
 namespace inouz{
-
 	struct map{
 	private:
 		std::vector<path> PathSet;

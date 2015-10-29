@@ -15,16 +15,12 @@ namespace inouz{
 		public:
 			//ロック要求
 			void send_lock(id_type TergetID);
-			//ロック要求を受諾
-			void send_ack_lock(id_type TergetID);
-			//ロック要求を拒否
-			void send_nak_lock(id_type TergetID);
-			//ロック要求を拒否し、逆ロック要求
-			void send_rev_lock(id_type TergetID);
+			//ロック要求に返答 ack:ack/nack relock:逆ロック要求
+			void send_reply_lock(id_type TergetID, bool ack, bool relock=false);
 			//アンロック要求
 			void send_unlock(id_type TergetID);
 			//アンロック要求を受諾
-			void send_ack_unlock(id_type TergetID);
+			void send_reply_unlock(id_type TergetID, bool ack);
 			//通信要求
 			void send_ping(id_type TergetID);
 			//通信要求返答
@@ -37,15 +33,11 @@ namespace inouz{
 			//ロック要求
 			virtual void recv_lock(id_type TergetID);
 			//ロック要求を受諾
-			virtual void recv_ack_lock(id_type TergetID);
-			//ロック要求を拒否
-			virtual void recv_nak_lock(id_type TergetID);
-			//ロック要求を拒否し、逆ロック要求
-			virtual void recv_rev_lock(id_type TergetID);
+			virtual void recv_reply_lock(id_type TergetID, bool ack, bool relock = false);
 			//アンロック要求
 			virtual void recv_unlock(id_type TergetID);
 			//アンロック要求を受諾
-			virtual void recv_ack_unlock(id_type TergetID);
+			virtual void recv_reply_unlock(id_type TergetID, bool ack);
 			//通信要求
 			virtual void recv_ping(id_type TergetID);
 			//通信要求返答

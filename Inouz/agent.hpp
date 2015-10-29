@@ -3,7 +3,7 @@
 #
 #include "msgset.hpp"
 #include "map.hpp"
-#include "movement_interface.hpp"
+#include "locomotor_interface.hpp"
 #include "navigate.hpp"
 namespace inouz{
 	struct agent{
@@ -18,7 +18,7 @@ namespace inouz{
 		//ナビゲータモジュール
 		navigate Navi;
 		//動力モジュール
-		movement_interface* pMove;
+		locomotor_interface* pMove;
 	private:
 		//送受信用モジュール
 		struct client :public msgset::client_interface{

@@ -3,7 +3,7 @@
 #
 #include"map.hpp"
 namespace inouz{
-	struct movement_interface{
+	struct locomotor_interface{
 		virtual void move(position Pos) = 0;
 		virtual void operator()(void) = 0;
 	};
