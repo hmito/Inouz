@@ -1,0 +1,3 @@
+[submodule "Inouz/hmLib"]
+	path = Inouz/hmLib
+	url = https://github.com/hmito/hmLib
